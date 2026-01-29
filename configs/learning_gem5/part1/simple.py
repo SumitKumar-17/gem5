@@ -38,6 +38,8 @@ respectively.
 
 """
 
+import os
+
 # import the m5 (gem5) library created when gem5 is built
 import m5
 
@@ -80,7 +82,12 @@ system.cpu.interrupts[0].int_responder = system.membus.mem_side_ports
 
 # Create a DDR3 memory controller and connect it to the membus
 system.mem_ctrl = MemCtrl()
-system.mem_ctrl.dram = DDR3_1600_8x8()
+
+# using DDR3 here
+# system.mem_ctrl.dram = DDR3_1600_8x8()
+
+# changing to DDR4
+system.mem_ctrl.dram = DDR4_2400_8x8()
 system.mem_ctrl.dram.range = system.mem_ranges[0]
 system.mem_ctrl.port = system.membus.mem_side_ports
 
