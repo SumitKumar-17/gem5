@@ -2,12 +2,11 @@
 
 ## Overview
 
-This document describes the single parameter sweep analysis for the L2 cache size parameter, completed as part of Assignment 1 - Cache Hierarchy Optimization.
+This document describes the single parameter sweep analysis for the **L2 cache size parameter**
 
 **Parameter Investigated:** L2 Cache Size
 **Values Tested:** 128kB, 256kB, 512kB, 1MB
 **Benchmark:** Matrix Multiplication (64×64 matrices)
-**Date:** February 1, 2026
 
 ---
 
@@ -339,28 +338,6 @@ Two subplots:
 
 ---
 
-## Troubleshooting
-
-### Issue: Simulation Timeout
-
-**Symptom:** Simulation runs for >10 minutes
-**Solution:** Check binary is compiled correctly for RISCV
-
-### Issue: Missing matplotlib
-
-**Symptom:** `ModuleNotFoundError: No module named 'matplotlib'`
-**Solution:** Use venv: `source venv/bin/activate`
-
-### Issue: Different Results
-
-**Symptom:** Your results don't match documented values
-**Possible Causes:**
-- Different matrix size (check `#define N` in matrix_multiply.c)
-- Different compiler optimization (should be `-O2`)
-- Different cache configuration
-
----
-
 ## Extending This Analysis
 
 ### Test Different Matrix Sizes
@@ -397,19 +374,3 @@ This single parameter sweep demonstrates that:
 2. Performance **saturates quickly** once working set fits in cache
 3. **Cost-effective sizing** requires understanding working set characteristics
 4. The matrix multiplication benchmark is an excellent vehicle for cache analysis
-
----
-
-## Next Steps
-
-Proceed to **Part 3: Multi-Parameter Analysis** which will:
-- Sweep multiple parameters simultaneously
-- Identify parameter interactions
-- Find Pareto-optimal configurations
-- Analyze trade-offs between multiple cache dimensions
-
----
-
-**Author:** Assignment 1 - Cache Hierarchy Optimization
-**Date:** February 1, 2026
-**Platform:** gem5 v25.1.0.0, RISCV ISA

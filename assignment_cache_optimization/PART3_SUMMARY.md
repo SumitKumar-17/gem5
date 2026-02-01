@@ -1,6 +1,5 @@
 # Part 3: Multi-Parameter Analysis - SUMMARY
 
-**Date:** February 1, 2026
 **Configurations Tested:** 108
 **Total Runtime:** ~18 minutes
 **Benchmark:** Matrix Multiplication (64×64)
@@ -11,10 +10,10 @@
 
 - [x] **results.json** - Complete sweep results (51 KB, 108 configurations)
 - [x] **Analysis Plots** (4 visualizations):
-  - L1D size impact (130 KB PNG)
-  - L2 size impact (132 KB PNG)
-  - Associativity impact (217 KB PNG)
-  - Performance distribution (167 KB PNG)
+  - L1D size impact 
+  - L2 size impact 
+  - Associativity impact 
+  - Performance distribution 
 - [x] **Summary Statistics** - Mean, min, max for all key metrics
 - [x] **Top 3 Configurations** - Ranked by execution time, L1D hit rate, L2 hit rate
 
@@ -151,17 +150,17 @@ Range: Nearly constant (compulsory misses dominate)
 
 ### Impact Ranking (by Performance)
 
-1. **L1D Size: CRITICAL** ⭐⭐⭐⭐⭐
+1. **L1D Size: CRITICAL** 
    - 16kB → 64kB: **13.1% performance improvement**
    - Largest single parameter impact
    - **Recommendation: Use 64kB L1D**
 
-2. **L1 Associativity: SIGNIFICANT** ⭐⭐⭐
+2. **L1 Associativity: SIGNIFICANT** 
    - 2-way → 4-way: **3-4% improvement**
    - 4-way → 8-way: **Minimal/negative impact**
    - **Recommendation: Use 4-way**
 
-3. **L2 Size: MINIMAL** ⭐
+3. **L2 Size: MINIMAL** 
    - 128kB → 1MB: **<0.1% variation**
    - Working set fits in smallest L2
    - **Recommendation: Use 128kB-256kB (cost-effective)**
@@ -385,7 +384,3 @@ assignment_cache_optimization/results/full_sweep_results/
 - Make cost-benefit trade-off decisions
 - Provide evidence-based architecture recommendations
 
----
-
-**Part 3 Complete** ✓
-All deliverables generated and analyzed.

@@ -269,6 +269,3 @@ Run the exact configuration:
 Expected: 7,147,636,000 ticks ✓
 
 ---
-
-**Design Table Complete** ✓
-Ready for submission and design implementation.
