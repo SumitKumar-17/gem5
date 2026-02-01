@@ -9,8 +9,8 @@ statistics for analysis.
 
 Parameter Swept: L2 Cache Size (128kB, 256kB, 512kB, 1MB)
 
-Author: Assignment 1 - Part 2
-Date: February 2026
+ * Team Members: Sumit Kumar(22CS30056) and Aviral Singh(22CS30015)
+ * Assignment 1 - Cache Hierarchy Optimization Part 2
 """
 
 import subprocess

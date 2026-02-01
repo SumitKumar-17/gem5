@@ -9,7 +9,8 @@ Usage:
         --l1_assoc=4 --l2_assoc=8 \
         --binary=<path_to_binary>
 
-Author: Assignment 1 - Cache Hierarchy Optimization
+ * Team Members: Sumit Kumar(22CS30056) and Aviral Singh(22CS30015)
+ * Assignment 1 - Cache Hierarchy Optimization
 """
 
 import m5

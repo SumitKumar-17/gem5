@@ -4,8 +4,8 @@
  * This benchmark performs matrix multiplication of two NxN matrices.
  * It is designed to be memory-intensive to stress the cache hierarchy.
  *
- * Author: Assignment 1 - Cache Hierarchy Optimization
- * Date: February 2026
+ * Team Members: Sumit Kumar(22CS30056) and Aviral Singh(22CS30015)
+ * Assignment 1 - Cache Hierarchy Optimization
  */
 
 #include <stdio.h>

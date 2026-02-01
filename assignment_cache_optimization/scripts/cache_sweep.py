@@ -12,8 +12,8 @@ Parameters Swept:
   - L1 associativity
   - L2 associativity
 
-Author: Assignment 1 - Part 3
-Date: February 2026
+ * Team Members: Sumit Kumar(22CS30056) and Aviral Singh(22CS30015)
+ * Assignment 1 - Cache Hierarchy Optimization Part 3
 """
 
 import subprocess
