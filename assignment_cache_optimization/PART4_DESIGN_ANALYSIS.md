@@ -12,13 +12,13 @@
 All graphs referenced in this document are located in: `results/full_sweep_results/analysis_plots/`
 
 **Available Visualizations:**
-1. [Pareto Frontier Analysis](./results/full_sweep_results/analysis_plots/pareto-frontier.png) - `pareto_frontier.png`
-2. [Performance-Cost Trade-off](./results/full_sweep_results/analysis_plots/cost-tradeoff.png) - `performance_cost_tradeoff.png`
-3. [90% Performance Threshold](./results/full_sweep_results/analysis_plots/90-threshold.png) - `ninety_percent_threshold.png`
-4. [L1D Size Impact](./results/full_sweep_results/analysis_plots/l1d-impact.png) - `l1d_size_impact.png`
-5. [L2 Size Impact](./results/full_sweep_results/analysis_plots/l2-impact.png) - `l2_size_impact.png`
-6. [Associativity Impact](./results/full_sweep_results/analysis_plots/assoc-impact.png) - `associativity_impact.png`
-7. [Performance Distribution](./results/full_sweep_results/analysis_plots/perf-dist.png) - `performance_distribution.png`
+1. [Pareto Frontier Analysis](./results/full_sweep_results/analysis_plots/pareto_frontier.png) - `pareto_frontier.png`
+2. [Performance-Cost Trade-off](./results/full_sweep_results/analysis_plots/performance_cost_tradeoff.png) - `performance_cost_tradeoff.png`
+3. [90% Performance Threshold](./results/full_sweep_results/analysis_plots/90-ninety_percent_threshold.png) - `ninety_percent_threshold.png`
+4. [L1D Size Impact](./results/full_sweep_results/analysis_plots/l1d_size_impact.png) - `l1d_size_impact.png`
+5. [L2 Size Impact](./results/full_sweep_results/analysis_plots/l2_size_impact.png) - `l2_size_impact.png`
+6. [Associativity Impact](./results/full_sweep_results/analysis_plots/associativity_impact.png) - `associativity_impact.png`
+7. [Performance Distribution](./results/full_sweep_results/analysis_plots/performance_distribution.png) - `performance_distribution.png`
 
 ---
 
@@ -26,7 +26,7 @@ All graphs referenced in this document are located in: `results/full_sweep_resul
 
 Through comprehensive multi-parameter analysis of 108 cache configurations, we identified that **L1D cache size is the dominant performance factor** (13.1% impact), while L2 configuration has minimal effect (<0.1%). The optimal configuration balances performance and cost: **64kB L1D / 128kB L2 / 4-way / 4-way**, achieving best-in-class performance at moderate cost. Three Pareto-optimal configurations exist, enabling designers to choose based on silicon budget constraints.
 
-**→ See visualization:** `pareto_frontier.png` for Pareto-optimal configurations
+**→ See visualization:** [Pareto Frontier](./results/full_sweep_results/analysis_plots/pareto_frontier.png) - `pareto_frontier.png`
 
 ---
 
@@ -41,11 +41,11 @@ Through comprehensive multi-parameter analysis of 108 cache configurations, we i
 - Configurations with 64kB L1D average **1,639 L1D misses** (0.20% miss rate)
 - This 17.4× reduction in L1D misses directly correlates with **13.1% performance improvement** (8.23B → 7.15B ticks)
 
-**→ See visualization:** `l1d_size_impact.png` - Shows L1D size directly impacts execution time
+**→ See visualization:** [L1D Size Impact](./results/full_sweep_results/analysis_plots/l1d_size_impact.png) - `l1d_size_impact.png`
 
 The L2 cache sees only the L1D misses, and handles them with high hit rates (>90% for most configs). The ~2,000 L2 misses that reach main memory are compulsory (cold-start) misses and remain constant regardless of cache configuration. Thus, **L1D miss penalty >> L2 miss penalty >> memory access penalty** in terms of aggregate impact.
 
-**→ See visualization:** `l2_size_impact.png` - Shows L2 size has minimal impact on performance
+**→ See visualization:** [L2 Size Impact](./results/full_sweep_results/analysis_plots/l2_size_impact.png) - `l2_size_impact.png`
 
 ### What percentage of memory requests reach main memory?
 
@@ -75,7 +75,7 @@ This demonstrates the **critical filtering effect** of the cache hierarchy, wher
 
 L1D achieves 99.80% hit rate with 64kB size because the working set (48KB for three matrices) fits entirely, enabling **capacity-driven excellence**. L2 hit rates vary widely (1-96%) depending on L1D size—high L2 hit rates paradoxically indicate poor L1D performance (more misses spilling to L2).
 
-**→ See visualization:** `performance_distribution.png` - Shows hit rate distributions across all configurations
+**→ See visualization:** [Performance Distribution](./results/full_sweep_results/analysis_plots/performance_distribution.png) - `performance_distribution.png`
 
 ### Is L2 size or associativity more important?
 
@@ -103,11 +103,11 @@ L1D achieves 99.80% hit rate with 64kB size because the working set (48KB for th
 - **Actual achievement: 92.1% of peak** (8.2% slower than best)
 - **Cost savings: 25% less cache area** (144KB vs 192KB)
 
-**→ See visualization:** `ninety_percent_threshold.png` - Shows smallest config achieving 90% threshold
+**→ See visualization:** [90% Performance Threshold](./results/full_sweep_results/analysis_plots/ninety_percent_threshold.png) - `ninety_percent_threshold.png`
 
 This configuration represents an aggressive cost optimization, trading 8% performance for significant silicon savings. However, a **better balanced choice is 32kB/128kB/4/4** (160KB), achieving 99.7% of peak performance with only 17% cache area reduction—a far superior efficiency point.
 
-**→ See visualization:** `performance_cost_tradeoff.png` - Shows normalized performance vs cost analysis
+**→ See visualization:** [Performance-Cost Trade-off](./results/full_sweep_results/analysis_plots/performance_cost_tradeoff.png) - `performance_cost_tradeoff.png`
 
 ### How much performance do you lose by using direct-mapped caches (assoc=1)?
 
@@ -174,7 +174,7 @@ This configuration represents an aggressive cost optimization, trading 8% perfor
 
 **Justification:** This configuration achieves **best-in-class performance at minimal cost**. It is Pareto-optimal (cannot improve one metric without harming another) and represents the **single best choice** for general-purpose systems. The 64kB L1D captures the entire working set (99.80% hit rate), while the 128kB L2 is sufficient since L1D already handles most accesses. This configuration appears in **84% of top-10 performing configs**, demonstrating its robustness.
 
-**→ See visualization:** `pareto_frontier.png` - This config marked as Pareto-optimal (red star)
+**→ See visualization:** [Pareto Frontier](./results/full_sweep_results/analysis_plots/pareto_frontier.png) - This config marked as Pareto-optimal (red star)
 
 ---
 
@@ -225,43 +225,43 @@ All visualizations supporting this analysis are available in: `results/full_swee
 
 ### Graph Descriptions and Applications
 
-#### 1. **Pareto Frontier Analysis** (`pareto_frontier.png`)
+#### 1. [Pareto Frontier Analysis](./results/full_sweep_results/analysis_plots/pareto_frontier.png) - `pareto_frontier.png`
 - **Purpose**: Identifies configurations that are optimal trade-offs between performance and cost
 - **Key Finding**: 3 Pareto-optimal configurations identified, with 64kB/128kB/4/4 being the best balanced choice
 - **Used in**: Executive Summary, Question D (Design Recommendations)
 - **Interpretation**: Red stars indicate configurations where neither performance nor cost can improve without degrading the other metric
 
-#### 2. **Performance-Cost Trade-off** (`performance_cost_tradeoff.png`)
+#### 2. [Performance-Cost Trade-off](./results/full_sweep_results/analysis_plots/performance_cost_tradeoff.png) - `performance_cost_tradeoff.png`
 - **Purpose**: Shows normalized performance loss vs normalized cache size cost
 - **Key Finding**: Pareto-optimal configs cluster near the ideal point (0,0)
 - **Used in**: Question C (Cost-Benefit Analysis)
 - **Interpretation**: Closer to origin = better efficiency; red stars = Pareto-optimal
 
-#### 3. **90% Performance Threshold** (`ninety_percent_threshold.png`)
+#### 3. [90% Performance Threshold](./results/full_sweep_results/analysis_plots/ninety_percent_threshold.png) - `ninety_percent_threshold.png`
 - **Purpose**: Identifies minimum cache size needed to achieve 90% of peak performance
 - **Key Finding**: 144KB total cache (16kB/128kB/2/4) meets threshold, but 160KB (32kB/128kB/4/4) is much better
 - **Used in**: Question C (Cost-Benefit Analysis)
 - **Interpretation**: Green points meet threshold; blue diamond = smallest qualifying config; gold star = best config
 
-#### 4. **L1D Size Impact** (`l1d_size_impact.png`)
+#### 4. [L1D Size Impact](./results/full_sweep_results/analysis_plots/l1d_size_impact.png) - `l1d_size_impact.png`
 - **Purpose**: Demonstrates the dominant effect of L1D cache size on both execution time and hit rate
 - **Key Finding**: 16kB→64kB reduces execution time by 13.1% and improves hit rate from 97.4% to 99.8%
 - **Used in**: Question A (Performance Bottlenecks), Executive Summary
 - **Interpretation**: Boxplots show distribution across all configs with that L1D size; clear downward trend
 
-#### 5. **L2 Size Impact** (`l2_size_impact.png`)
+#### 5. [L2 Size Impact](./results/full_sweep_results/analysis_plots/l2_size_impact.png) - `l2_size_impact.png`
 - **Purpose**: Shows that L2 cache size has negligible impact on performance
 - **Key Finding**: 128kB→1MB L2 produces <0.1% performance variation
 - **Used in**: Question A (Performance Bottlenecks), Question B (Cache Efficiency)
 - **Interpretation**: Flat boxplots indicate L2 size is not a performance bottleneck for this workload
 
-#### 6. **Associativity Impact** (`associativity_impact.png`)
+#### 6. [Associativity Impact](./results/full_sweep_results/analysis_plots/associativity_impact.png) - `associativity_impact.png`
 - **Purpose**: Analyzes the effect of L1 and L2 associativity on performance and hit rates (4-panel visualization)
 - **Key Finding**: 4-way L1 associativity is optimal; 8-way degrades performance; L2 associativity irrelevant
 - **Used in**: Question B (Cache Efficiency), Question C (direct-mapped analysis)
 - **Interpretation**: Shows 3-4% improvement from 2-way to 4-way L1, but no benefit beyond 4-way
 
-#### 7. **Performance Distribution** (`performance_distribution.png`)
+#### 7. [Performance Distribution](./results/full_sweep_results/analysis_plots/performance_distribution.png) - `performance_distribution.png`
 - **Purpose**: Shows overall distribution of execution times and hit rates across all 108 configurations
 - **Key Finding**: Bimodal distribution in execution time corresponds to L1D size; hit rates cluster by cache level
 - **Used in**: Question B (Cache Efficiency), Summary Statistics

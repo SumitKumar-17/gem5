@@ -1,7 +1,7 @@
 # Assignment 1: Cache Hierarchy Optimization using gem5
 
-**Course:** Computer Architecture
-**Date:** February 2026
+**Course:** CS60003 High Performance in Computer Architecture
+**Authors:** Sumit Kumar(22CS30056) and Aviral Singh(22CS30015)
 **Platform:** gem5 v25.1.0.0, RISCV ISA
 **Benchmark:** Matrix Multiplication (64×64)
 
@@ -95,8 +95,7 @@ assignment_cache_optimization/
 
 ## Assignment Parts Summary
 
-### Part 1: Environment Setup ✓
-**Objective:** Get familiar with gem5 and cache configuration
+### Part 1: Environment Setup 
 
 **Deliverables:**
 - Cache configuration script (`configs/cache_config.py`)
@@ -111,8 +110,7 @@ assignment_cache_optimization/
 
 ---
 
-### Part 2: Single Parameter Sweep ✓
-**Objective:** Understand impact of L2 cache size
+### Part 2: Single Parameter Sweep 
 
 **Parameter Swept:** L2 Size (128kB, 256kB, 512kB, 1MB)
 
@@ -126,8 +124,7 @@ assignment_cache_optimization/
 
 ---
 
-### Part 3: Multi-Parameter Analysis ✓
-**Objective:** Understand parameter interactions
+### Part 3: Multi-Parameter Analysis 
 
 **Parameters Swept:**
 - L1D Size: 16kB, 32kB, 64kB
@@ -150,11 +147,10 @@ assignment_cache_optimization/
 
 ---
 
-### Part 4: Design Analysis & Recommendations ✓
-**Objective:** Make data-driven design decisions
+### Part 4: Design Analysis & Recommendations 
 
 **Deliverables:**
-- Answers to 4 design questions (~1,210 words)
+- Answers to 4 design questions 
 - 3 Pareto analysis plots
 - Design recommendation table (4 system types)
 - Comprehensive justifications
@@ -344,9 +340,6 @@ python3 scripts/part4_analysis.py
 # 10. Review all documentation
 ls assignment_cache_optimization/PART*.md
 ```
-
-**Total Time:** ~25-30 minutes (mostly simulation time)
-
 ---
 
 ## Validation
@@ -377,69 +370,5 @@ If your results differ:
 - Confirm gem5 version matches (v25.1.0.0)
 - Check cache parameters exactly match
 
----
 
-## Files for Submission
 
-Create `problem_1_assignment_1_soln.zip` containing:
-
-```
-assignment_cache_optimization/
-├── benchmarks/
-│   └── matrix_multiply.c
-├── scripts/ (all .py files)
-├── results/ (all results directories)
-├── All PART*_*.md and .txt files
-└── README.md
-```
-
-**Note:** Binary files and simulation outputs can be excluded from submission to reduce size. Include at least:
-- Source code (matrix_multiply.c)
-- Scripts (all .py files)
-- Results (JSON, CSV)
-- Plots (all .png files)
-- Documentation (all .md and .txt files)
-
----
-
-## Troubleshooting
-
-### Issue: Simulation very slow
-**Solution:** Use `--quick` flag for testing: `python3 scripts/cache_sweep.py --quick`
-
-### Issue: Matplotlib not found
-**Solution:** Activate venv: `source venv/bin/activate`
-
-### Issue: RISCV compiler not found
-**Solution:** Install: `sudo apt install gcc-riscv64-linux-gnu`
-
-### Issue: Different results than expected
-**Solution:** Verify matrix size (N=64), compilation flags (-O2), gem5 version
-
----
-
-## References
-
-- gem5 Documentation: https://www.gem5.org/documentation/
-- RISCV ISA: https://riscv.org/
-- gem5 Learning Resources: https://www.gem5.org/documentation/learning_gem5/
-- Assignment Instructions: ASSIGNMENT-1.docx
-
----
-
-## Authors & Acknowledgments
-
-**Assignment:** Cache Hierarchy Optimization
-**Platform:** gem5 v25.1.0.0, RISCV ISA
-**Date:** February 2026
-
----
-
-## License
-
-This is coursework for educational purposes. The gem5 simulator is used under its BSD license.
-
----
-
-**Assignment Status:** ✅ COMPLETE (All 4 parts)
-**Ready for:** Submission to Moodle
