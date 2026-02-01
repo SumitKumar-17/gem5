@@ -1,9 +1,8 @@
 # Assignment 1: Cache Hierarchy Optimization using gem5
 
 **Course:** CS60003 High Performance in Computer Architecture
-**Authors:** Sumit Kumar(22CS30056) and Aviral Singh(22CS30015)
-**Platform:** gem5 v25.1.0.0, RISCV ISA
-**Benchmark:** Matrix Multiplication (64×64)
+
+**Team Members:** Sumit Kumar(22CS30056) and Aviral Singh(22CS30015)
 
 ---
 
@@ -12,6 +11,7 @@
 This assignment investigates how different cache configurations affect processor performance using gem5 simulation. Through comprehensive parameter sweeps and data-driven analysis, we identify optimal cache configurations for different system types.
 
 **Total Configurations Tested:** 112 (4 single-parameter + 108 multi-parameter)
+
 **Key Finding:** L1D cache size is 10× more important than any other parameter
 
 ---
@@ -78,10 +78,10 @@ assignment_cache_optimization/
 │       │   ├── performance_cost_tradeoff.png
 │       │   └── ninety_percent_threshold.png
 │       └── [108 simulation directories]
+├── PART1/* [result m5out of the part1 runs]
+|
 ├── PART1_OUTPUT.txt               # Part 1 summary
 ├── PART1_README.md
-├── PART1_config.ini
-├── PART1_stats.txt
 ├── PART2_README.md                # Part 2 documentation
 ├── PART2_SUMMARY.txt
 ├── PART3_SUMMARY.md               # Part 3 analysis
@@ -369,6 +369,4 @@ If your results differ:
 - Verify -O2 optimization flag in compilation
 - Confirm gem5 version matches (v25.1.0.0)
 - Check cache parameters exactly match
-
-
 
