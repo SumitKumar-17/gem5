@@ -1,0 +1,145 @@
+================================================================================
+                  PART 1: Environment Setup - OUTPUT LOG
+================================================================================
+
+DATE: February 1, 2026
+ASSIGNMENT: Cache Hierarchy Optimization using gem5
+
+================================================================================
+1. GEM5 BUILD VERIFICATION
+================================================================================
+Build Path: ./build/RISCV/gem5.opt
+Build Status: ✓ SUCCESS
+Build Size: 954MB
+Build Date: Jan 31 2026 19:03:12
+gem5 Version: 25.1.0.0
+
+================================================================================
+2. TEST CONFIGURATION
+================================================================================
+Command:
+  ./build/RISCV/gem5.opt configs/cache_config.py \
+    --l1i_size=16kB \
+    --l1d_size=16kB \
+    --l2_size=256kB \
+    --l1_assoc=4 \
+    --l2_assoc=8 \
+    --binary=tests/test-progs/hello/bin/riscv/linux/hello
+
+Cache Configuration:
+  - L1I Size: 16kB, Associativity: 4
+  - L1D Size: 16kB, Associativity: 4
+  - L2  Size: 256kB, Associativity: 8
+
+System Configuration:
+  - CPU: RiscvTimingSimpleCPU
+  - Clock: 1GHz
+  - Memory: 512MiB, DDR3_1600_8x8
+  - Mode: Syscall Emulation (SE)
+
+================================================================================
+3. SIMULATION RESULTS
+================================================================================
+
+Execution Status: ✓ SUCCESS
+Program Output: "Hello world!"
+Exit Condition: exiting with last active thread context
+
+Timing Metrics:
+  - Total Simulation Time: 0.000057 seconds
+  - Total Ticks: 57,093,000
+  - Instructions Simulated: 5,862
+
+================================================================================
+4. CACHE STATISTICS
+================================================================================
+
+┌─────────────────────────────────────────────────────────────────┐
+│ L1 INSTRUCTION CACHE (L1I)                                      │
+├─────────────────────────────────────────────────────────────────┤
+│ Configuration:    16kB, 4-way associative                       │
+│ Total Hits:       6,799                                         │
+│ Total Misses:     230                                           │
+│ Total Accesses:   7,029                                         │
+│ Hit Rate:         96.73%                                        │
+│ Miss Rate:        3.27%                                         │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│ L1 DATA CACHE (L1D)                                             │
+├─────────────────────────────────────────────────────────────────┤
+│ Configuration:    16kB, 4-way associative                       │
+│ Total Hits:       2,018                                         │
+│ Total Misses:     144                                           │
+│ Total Accesses:   2,162                                         │
+│ Hit Rate:         93.34%                                        │
+│ Miss Rate:        6.66%                                         │
+│ Writebacks:       3                                             │
+└─────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────┐
+│ L2 CACHE                                                        │
+├─────────────────────────────────────────────────────────────────┤
+│ Configuration:    256kB, 8-way associative                      │
+│ Total Hits:       1                                             │
+│ Total Misses:     373 (229 inst + 144 data)                    │
+│ Total Accesses:   374                                           │
+│ Hit Rate:         0.27%                                         │
+│ Miss Rate:        99.73%                                        │
+└─────────────────────────────────────────────────────────────────┘
+
+Memory Hierarchy Performance:
+  - L1 cache handles majority of memory accesses efficiently
+  - Most L2 accesses result in misses (cold start effect for small program)
+  - Overall system exhibits good cache behavior for this workload
+
+================================================================================
+5. KEY OBSERVATIONS
+================================================================================
+
+✓ Configuration script successfully created and tested
+✓ All cache parameters (size, associativity) are configurable via command line
+✓ RISCV ISA properly configured with TimingSimpleCPU
+✓ Two-level cache hierarchy (L1I + L1D + L2) working correctly
+✓ Cache statistics properly captured in m5out/stats.txt
+
+Performance Notes:
+  - L1I has excellent hit rate (96.73%) - good instruction locality
+  - L1D has good hit rate (93.34%) - reasonable data locality
+  - L2 has very low hit rate due to "hello world" being a small program
+  - For memory-intensive workloads (like matrix multiply), expect different patterns
+
+================================================================================
+6. FILES GENERATED
+================================================================================
+
+1. Configuration Script:
+   Location: configs/cache_config.py
+   Features:
+     - Command-line configurable cache parameters
+     - RISCV CPU with two-level cache hierarchy
+     - DDR3 memory controller
+     - Detailed output formatting
+
+2. Simulation Output:
+   Location: PART1/
+   Files:
+     - stats.txt: Detailed cache and system statistics
+     - config.ini: Complete system configuration
+
+3. This Report:
+   Location: assignment_cache_optimization/PART1_OUTPUT.txt
+
+================================================================================
+7. VERIFICATION CHECKLIST
+================================================================================
+
+[✓] gem5 RISCV build verified
+[✓] cache_config.py script created with all required parameters
+[✓] Test run completed successfully with default configuration
+[✓] Cache statistics captured and analyzed
+[✓] Output log generated
+
+================================================================================
+                            PART 1 COMPLETE
+================================================================================
