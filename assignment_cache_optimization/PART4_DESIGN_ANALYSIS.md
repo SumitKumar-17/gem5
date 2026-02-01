@@ -12,13 +12,13 @@
 All graphs referenced in this document are located in: `results/full_sweep_results/analysis_plots/`
 
 **Available Visualizations:**
-1. [Pareto Frontier Analysis](#pareto-frontier) - `pareto_frontier.png`
-2. [Performance-Cost Trade-off](#cost-tradeoff) - `performance_cost_tradeoff.png`
-3. [90% Performance Threshold](#90-threshold) - `ninety_percent_threshold.png`
-4. [L1D Size Impact](#l1d-impact) - `l1d_size_impact.png`
-5. [L2 Size Impact](#l2-impact) - `l2_size_impact.png`
-6. [Associativity Impact](#assoc-impact) - `associativity_impact.png`
-7. [Performance Distribution](#perf-dist) - `performance_distribution.png`
+1. [Pareto Frontier Analysis](./results/full_sweep_results/analysis_plots/pareto-frontier.png) - `pareto_frontier.png`
+2. [Performance-Cost Trade-off](./results/full_sweep_results/analysis_plots/cost-tradeoff.png) - `performance_cost_tradeoff.png`
+3. [90% Performance Threshold](./results/full_sweep_results/analysis_plots/90-threshold.png) - `ninety_percent_threshold.png`
+4. [L1D Size Impact](./results/full_sweep_results/analysis_plots/l1d-impact.png) - `l1d_size_impact.png`
+5. [L2 Size Impact](./results/full_sweep_results/analysis_plots/l2-impact.png) - `l2_size_impact.png`
+6. [Associativity Impact](./results/full_sweep_results/analysis_plots/assoc-impact.png) - `associativity_impact.png`
+7. [Performance Distribution](./results/full_sweep_results/analysis_plots/perf-dist.png) - `performance_distribution.png`
 
 ---
 
