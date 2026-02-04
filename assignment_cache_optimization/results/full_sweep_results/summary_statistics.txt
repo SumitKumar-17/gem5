@@ -1,0 +1,96 @@
+======================================================================
+SUMMARY STATISTICS
+======================================================================
+
+Execution Time (ticks):
+  Mean: 113,554,314,454
+  Std:  22,834,787,770
+  Min:  80,343,504,000
+  Max:  131,246,890,000
+
+Execution Time (seconds):
+  Mean: 0.113554
+  Std:  0.022835
+  Min:  0.080344
+  Max:  0.131247
+
+L1D Hit Rate (%):
+  Mean: 65.37
+  Std:  22.20
+  Min:  49.02
+  Max:  97.27
+
+L2 Hit Rate (%):
+  Mean: 98.64
+  Std:  1.73
+  Min:  94.06
+  Max:  99.80
+
+CPI:
+  Mean: 4.07
+  Std:  0.82
+  Min:  2.88
+  Max:  4.70
+
+IPC:
+  Mean: 0.26
+  Std:  0.06
+  Min:  0.21
+  Max:  0.35
+
+======================================================================
+TOP 3 CONFIGURATIONS
+======================================================================
+
+By Lowest Execution Time:
+----------------------------------------------------------------------
+  l1d64kB_l2512kB_l1a4_l2a4
+    Exec Time: 80.34B ticks
+    L1D Hit Rate: 97.27%
+    L2 Hit Rate: 96.32%
+
+  l1d64kB_l2512kB_l1a4_l2a8
+    Exec Time: 80.34B ticks
+    L1D Hit Rate: 97.27%
+    L2 Hit Rate: 96.32%
+
+  l1d64kB_l2512kB_l1a4_l2a16
+    Exec Time: 80.34B ticks
+    L1D Hit Rate: 97.27%
+    L2 Hit Rate: 96.32%
+
+By Highest L1D Hit Rate:
+----------------------------------------------------------------------
+  l1d64kB_l2128kB_l1a4_l2a4
+    L1D Hit Rate: 97.27%
+    Exec Time: 80.56B ticks
+    L2 Hit Rate: 94.06%
+
+  l1d64kB_l2128kB_l1a4_l2a8
+    L1D Hit Rate: 97.27%
+    Exec Time: 80.55B ticks
+    L2 Hit Rate: 94.06%
+
+  l1d64kB_l2128kB_l1a4_l2a16
+    L1D Hit Rate: 97.27%
+    Exec Time: 80.55B ticks
+    L2 Hit Rate: 94.06%
+
+By Highest L2 Hit Rate:
+----------------------------------------------------------------------
+  l1d16kB_l2512kB_l1a2_l2a4
+    L2 Hit Rate: 99.80%
+    Exec Time: 131.03B ticks
+    L1D Hit Rate: 49.02%
+
+  l1d16kB_l2512kB_l1a2_l2a8
+    L2 Hit Rate: 99.80%
+    Exec Time: 131.03B ticks
+    L1D Hit Rate: 49.02%
+
+  l1d16kB_l2512kB_l1a2_l2a16
+    L2 Hit Rate: 99.80%
+    Exec Time: 131.03B ticks
+    L1D Hit Rate: 49.02%
+
+======================================================================

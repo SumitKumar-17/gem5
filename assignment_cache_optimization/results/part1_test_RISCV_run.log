@@ -1,0 +1,66 @@
+warn: Base 10 memory/cache size 512MB will be cast to base 2 size 512MiB.
+warn: Base 10 memory/cache size 16kB will be cast to base 2 size 16KiB.
+warn: Base 10 memory/cache size 16kB will be cast to base 2 size 16KiB.
+warn: Base 10 memory/cache size 256kB will be cast to base 2 size 256KiB.
+Global frequency set at 1000000000000 ticks per second
+warn: No dot file generated. Please install pydot to generate the dot file and pdf.
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (16384 Mbytes) does not match the address range assigned (512 Mbytes)
+src/arch/riscv/isa.cc:321: info: RVV enabled, VLEN = 256 bits, ELEN = 64 bits
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+src/base/remote_gdb.cc:418: warn: Sockets disabled, not accepting gdb connections
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.0
+gem5 compiled Jan 31 2026 19:03:12
+gem5 started Feb  4 2026 15:19:55
+gem5 executing on sumitk, pid 1566578
+command line: ./build/RISCV/gem5.opt --outdir=assignment_cache_optimization/results/part1_test assignment_cache_optimization/configs/cache_config.py --l1i_size=16kB --l1d_size=16kB --l2_size=256kB --l1_assoc=4 --l2_assoc=8 --binary=assignment_cache_optimization/benchmarks/matrix_multiply
+
+info: Standard input is not a terminal, disabling listeners.
+======================================================================
+Cache Configuration Script - gem5 Assignment
+======================================================================
+
+FIXED PARAMETERS:
+  Clock: 1GHz
+  Memory Mode: timing
+  Memory Range: 512MB
+
+CONFIGURABLE PARAMETERS:
+Using RiscvTimingSimpleCPU
+L1 I-Cache: size=16kB, assoc=4
+L1 D-Cache: size=16kB, assoc=4
+L2 Cache: size=256kB, assoc=8
+Binary: assignment_cache_optimization/benchmarks/matrix_multiply
+
+======================================================================
+Starting Simulation...
+======================================================================
+
+src/sim/syscall_emul.cc:97: warn: ignoring syscall set_robust_list(...)
+      (further warnings will be suppressed)
+src/sim/syscall_emul.cc:108: warn: ignoring syscall rseq(...) returning -ENOSYS
+src/sim/syscall_emul.hh:1127: warn: readlink() called on '/proc/self/exe' may yield unexpected results in various settings.
+      Returning '/home/sumitk/Desktop/gem5/assignment_cache_optimization/benchmarks/matrix_multiply'
+src/sim/mem_state.cc:443: info: Increasing stack size by one page.
+src/sim/syscall_emul.cc:86: warn: ignoring syscall mprotect(...)
+Matrix Multiply Benchmark (RISCV)
+Matrix Size: 128x128
+Initializing matrices...
+Starting matrix multiplication...
+Verifying results...
+C[0][0] = 335280
+C[127][127] = 465424
+Benchmark complete!
+
+======================================================================
+Simulation Complete
+======================================================================
+Exiting @ tick 128830948000 because exiting with last active thread context
+
+Results saved to output directory:
+  - stats.txt: Detailed statistics
+  - config.ini: System configuration
+  - config.json: JSON system configuration
+======================================================================
