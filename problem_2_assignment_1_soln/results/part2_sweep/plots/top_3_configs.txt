@@ -1,0 +1,64 @@
+
+================================================================================
+TOP 3 CONFIGURATIONS - SIMPLE MERGE SORT
+================================================================================
+
+Rank 1: L1128KiB_L1A4_L21024KiB_L2A4
+  L1 Cache: 128KiB (both I & D), 4-way
+  L2 Cache: 1024KiB, 4-way
+  IPC: 0.289498
+  L1D Miss Rate: 0.227%
+  L2 Miss Rate: 61.10%
+  Execution Time: 16.54 seconds
+  Sim Ticks: 16,540,788,738,000
+
+Rank 2: L1128KiB_L1A8_L21024KiB_L2A4
+  L1 Cache: 128KiB (both I & D), 8-way
+  L2 Cache: 1024KiB, 4-way
+  IPC: 0.289467
+  L1D Miss Rate: 0.229%
+  L2 Miss Rate: 60.51%
+  Execution Time: 16.54 seconds
+  Sim Ticks: 16,542,546,497,000
+
+Rank 3: L1128KiB_L1A16_L21024KiB_L2A4
+  L1 Cache: 128KiB (both I & D), 16-way
+  L2 Cache: 1024KiB, 4-way
+  IPC: 0.289453
+  L1D Miss Rate: 0.230%
+  L2 Miss Rate: 60.16%
+  Execution Time: 16.54 seconds
+  Sim Ticks: 16,543,340,694,000
+
+
+================================================================================
+TOP 3 CONFIGURATIONS - CHUNKED MERGE SORT
+================================================================================
+
+Rank 1: L1128KiB_L1A4_L21024KiB_L2A4
+  L1 Cache: 128KiB (both I & D), 4-way
+  L2 Cache: 1024KiB, 4-way
+  IPC: 0.294923
+  L1D Miss Rate: 0.173%
+  L2 Miss Rate: 49.19%
+  Execution Time: 17.18 seconds
+  Sim Ticks: 17,182,446,579,000
+
+Rank 2: L1128KiB_L1A8_L21024KiB_L2A4
+  L1 Cache: 128KiB (both I & D), 8-way
+  L2 Cache: 1024KiB, 4-way
+  IPC: 0.294918
+  L1D Miss Rate: 0.173%
+  L2 Miss Rate: 49.03%
+  Execution Time: 17.18 seconds
+  Sim Ticks: 17,182,781,158,000
+
+Rank 3: L1128KiB_L1A16_L21024KiB_L2A4
+  L1 Cache: 128KiB (both I & D), 16-way
+  L2 Cache: 1024KiB, 4-way
+  IPC: 0.294910
+  L1D Miss Rate: 0.174%
+  L2 Miss Rate: 48.86%
+  Execution Time: 17.18 seconds
+  Sim Ticks: 17,183,255,980,000
+
