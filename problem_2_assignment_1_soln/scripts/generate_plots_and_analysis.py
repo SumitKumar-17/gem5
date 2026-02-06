@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
 Comprehensive plots and analysis for Part 2 cache sweep
-Includes 10+ plots for thorough cache performance analysis
 """
 
 import pandas as pd

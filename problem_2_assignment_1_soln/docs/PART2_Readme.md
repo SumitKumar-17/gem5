@@ -115,4 +115,3 @@ For memory-intensive sorting workloads with working sets far exceeding cache cap
 - **Algorithm matters more than hardware** (chunked 2% faster despite hardware)
 - **Cache hierarchy hits limits** (~3% performance range suggests saturation)
 
-**Future work:** Test with L3 caches, larger datasets, and compare against hardware prefetchers.
