@@ -23,11 +23,12 @@ problem_2_assignment_1_soln/
 │    ├── run_cache_sweep_parallel.sh                 # Automation script for 162 simulations in parallel
 │    ├── parse_results.py                            # Parser to extract metrics to CSV
 │    └── generate_plots_and_analysis.py              # Script to generate all 11 plots
+|
 |── docs/                                           
 │    ├── PART1_Readme.md                             # Readme for PART1
 │    ├── PART2_Readme.md                             # Readme for PART1
 │    └── top_3_configs.txt                          # The top three configs
-
+|
 │
 └── results/                                    # All simulation results
     │
@@ -43,7 +44,7 @@ problem_2_assignment_1_soln/
     |        │   ├── config.ini
     |        │   ├── config.json
     |        │   └── citations.bib
-    |        │
+    |        
     └── part2_sweep/                            # Part 2: Cache optimization sweep
         │
         ├── all_results.csv                     # Consolidated results (162 rows × 20 columns)
