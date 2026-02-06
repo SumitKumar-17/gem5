@@ -6,7 +6,7 @@
 
 **Simple Merge Sort - Top 3:**
 1. **L1: 128KiB/4-way, L2: 1024KiB/4-way** - IPC: 0.2895
-2. **L1: 128KiB/8-way, L2: 1024KiB/4-way** - IPC: 0.2895  
+2. **L1: 128KiB/8-way, L2: 1024KiB/4-way** - IPC: 0.2895
 3. **L1: 128KiB/16-way, L2: 1024KiB/4-way** - IPC: 0.2895
 
 **Chunked Merge Sort - Top 3:**
@@ -20,14 +20,14 @@
 
 Both algorithms show **dramatic performance improvements** with larger L2 caches:
 - **256KiB L2:** ~70-85% miss rate (severe bottleneck)
-- **512KiB L2:** ~57-74% miss rate (moderate bottleneck)  
+- **512KiB L2:** ~57-74% miss rate (moderate bottleneck)
 - **1024KiB L2:** ~48-61% miss rate (best performance)
 
 **Why?** The working set during merge operations exceeds smaller cache sizes. With 10MB of data being sorted, only the 1MB L2 cache can hold enough recently-accessed data to meaningfully reduce memory traffic.
 
 #### 2. **L1 Associativity Has Minimal Impact**
 
-Across all configurations, **L1 associativity (4-way vs 16-way) changes IPC by <0.02%**. 
+Across all configurations, **L1 associativity (4-way vs 16-way) changes IPC by <0.02%**.
 
 **Why?** Sequential memory access patterns in merge sort don't cause significant conflict misses. The algorithms read/write data in predictable streams, so even a 4-way set-associative cache can effectively handle the access patterns without excessive conflicts.
 
@@ -70,7 +70,7 @@ Chunked merge sort consistently outperforms simple merge sort:
 - **Best price/performance:** Lower associativity = simpler hardware
 
 #### For Chunked Merge Sort:
-**Optimal:** L1: 128KiB/4-way, L2: 1024KiB/4-way  
+**Optimal:** L1: 128KiB/4-way, L2: 1024KiB/4-way
 - Same configuration as simple sort
 - Leverages streaming patterns effectively
 - **Achieves 0.2949 IPC** (best observed)
@@ -114,4 +114,3 @@ For memory-intensive sorting workloads with working sets far exceeding cache cap
 - **L1 associativity is overrated** (4-way sufficient)
 - **Algorithm matters more than hardware** (chunked 2% faster despite hardware)
 - **Cache hierarchy hits limits** (~3% performance range suggests saturation)
-

@@ -61,4 +61,3 @@ Rank 3: L1128KiB_L1A16_L21024KiB_L2A4
   L2 Miss Rate: 48.86%
   Execution Time: 17.18 seconds
   Sim Ticks: 17,183,255,980,000
-

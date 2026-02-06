@@ -69,9 +69,8 @@ In contrast, the chunked version processes **2MB chunks** that still exceed cach
 
 The results clearly show chunked sorting's advantages in specific parameters:
 - **L1D Miss Rate**: 0.204% (chunked) vs 0.259% (simple) - **21.4% improvement**
-- **L2 Miss Rate**: 57.0% (chunked) vs 66.4% (simple) - **14.1% improvement**  
+- **L2 Miss Rate**: 57.0% (chunked) vs 66.4% (simple) - **14.1% improvement**
 - **L2 Demand Misses**: 2.7M (chunked) vs 3.9M (simple) - **30.6% reduction**
 - **IPC**: 0.294 (chunked) vs 0.288 (simple) - **2.0% improvement**
 
 The chunked approach's streaming merge pattern creates more predictable memory access, allowing the processor's cache prefetcher to work effectively. Although it executes 5.8% more instructions due to chunk management overhead, the improved cache hit rates more than compensate, yielding better overall performance as measured by IPC.
-
