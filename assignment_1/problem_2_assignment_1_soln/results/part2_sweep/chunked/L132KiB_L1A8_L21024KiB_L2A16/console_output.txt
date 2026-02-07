@@ -1,0 +1,74 @@
+Global frequency set at 1000000000000 ticks per second
+warn: failed to generate dot output from /home/rtx3060/gem5/assignment/results/part2_sweep/chunked/L132KiB_L1A8_L21024KiB_L2A16/config.dot
+src/mem/dram_interface.cc:690: warn: DRAM device capacity (8192 Mbytes) does not match the address range assigned (512 Mbytes)
+src/arch/riscv/isa.cc:321: info: RVV enabled, VLEN = 256 bits, ELEN = 64 bits
+src/base/statistics.hh:279: warn: One of the stats is a legacy stat. Legacy stat is a stat that does not belong to any statistics::Group. Legacy stat is deprecated.
+src/base/remote_gdb.cc:418: warn: Sockets disabled, not accepting gdb connections
+gem5 Simulator System.  https://www.gem5.org
+gem5 is copyrighted software; use the --copyright option for details.
+
+gem5 version 25.1.0.0
+gem5 compiled Feb  1 2026 19:08:13
+gem5 started Feb  4 2026 01:20:41
+gem5 executing on rtx3060-MS-7D90, pid 652071
+command line: /home/rtx3060/gem5/build/ALL/gem5.opt --outdir=/home/rtx3060/gem5/assignment/results/part2_sweep/chunked/L132KiB_L1A8_L21024KiB_L2A16 --stats-file=stats.txt /home/rtx3060/gem5/assignment/simple-riscv_mergesort_chunked_param.py --l1-size=32KiB --l1-assoc=8 --l2-size=1024KiB --l2-assoc=16
+
+info: Standard input is not a terminal, disabling listeners.
+Configuration: L1I=32KiB/8-way, L1D=32KiB/8-way, L2=1024KiB/16-way
+Beginning simulation!
+src/sim/syscall_emul.cc:97: warn: ignoring syscall set_robust_list(...)
+      (further warnings will be suppressed)
+src/sim/syscall_emul.hh:1127: warn: readlink() called on '/proc/self/exe' may yield unexpected results in various settings.
+      Returning '/home/rtx3060/gem5/assignment/mergesort_c'
+src/sim/mem_state.cc:443: info: Increasing stack size by one page.
+src/sim/syscall_emul.cc:86: warn: ignoring syscall mprotect(...)
+Chunked Merge Sort - Starting
+File size: 10485760 bytes
+Total integers: 2621440
+Chunk size: 2097152 bytes (524288 integers)
+Number of chunks: 5
+Stream size: 1048576 bytes (262144 integers)
+
+Phase 1: Sorting 2MB chunks
+Chunk 0: Read 524288 integers
+  Before: 114799552 600705297 280700362
+  After: 4339 5942 9596
+  Chunk 0 sorted and saved
+Chunk 1: Read 524288 integers
+  Before: 14846588 1030972108 1290592209
+  After: 1164 3167 6284
+  Chunk 1 sorted and saved
+Chunk 2: Read 524288 integers
+  Before: 1050752791 587858285 1890507275
+  After: 10226 11792 16479
+  Chunk 2 sorted and saved
+Chunk 3: Read 524288 integers
+  Before: 348341886 514361180 1838198515
+  After: 6609 25413 39470
+  Chunk 3 sorted and saved
+Chunk 4: Read 524288 integers
+  Before: 1375213836 1257624379 158630930
+  After: 1440 5260 6380
+  Chunk 4 sorted and saved
+
+Phase 2: 5-way parallel merge with 1MB streams
+Stream 0 initialized: first value = 4339
+Stream 1 initialized: first value = 1164
+Stream 2 initialized: first value = 10226
+Stream 3 initialized: first value = 6609
+Stream 4 initialized: first value = 1440
+Starting 5-way merge...
+  Merged 500000 integers...
+  Merged 1000000 integers...
+  Merged 1500000 integers...
+  Merged 2000000 integers...
+  Merged 2500000 integers...
+5-way merge completed: 2621440 integers merged
+
+Verification:
+First 10 values: 1164 1440 3167 4339 5260 5942 6284 6380 6609 8414 
+Last 10 values: 2147470477 2147475185 2147476379 2147478458 2147478554 2147480550 2147481111 2147481212 2147482105 2147482247 
+SUCCESS: Array is properly sorted!
+
+Chunked Merge Sort - Completed
+Exiting @ tick 17233134698000 because exiting with last active thread context

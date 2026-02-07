@@ -1,0 +1,148 @@
+
+======================================================================
+Full Parameter Sweep - gem5 Cache Optimization
+======================================================================
+
+gem5 Binary: ./build/RISCV/gem5.opt
+Config Script: assignment_cache_optimization/configs/cache_config.py
+Benchmark: assignment_cache_optimization/benchmarks/matrix_multiply
+Output Directory: assignment_cache_optimization/results/full_sweep_results
+
+Sweep Parameters:
+  l1d_size: ['16kB', '32kB', '64kB']
+  l2_size: ['128kB', '256kB', '512kB', '1MB']
+  l1_assoc: [2, 4, 8]
+  l2_assoc: [4, 8, 16]
+
+Fixed Parameters:
+  l1i_size: 16kB
+  cpu_type: timing
+
+Total Configurations: 108
+======================================================================
+
+[1/108] l1d16kB_l2128kB_l1a2_l2a4... ✓ 131.2B ticks, L1D:49.0%
+[2/108] l1d16kB_l2128kB_l1a2_l2a8... ✓ 131.2B ticks, L1D:49.0%
+[3/108] l1d16kB_l2128kB_l1a2_l2a16... ✓ 131.2B ticks, L1D:49.0%
+[4/108] l1d16kB_l2128kB_l1a4_l2a4... ✓ 129.0B ticks, L1D:50.1%
+[5/108] l1d16kB_l2128kB_l1a4_l2a8... ✓ 129.0B ticks, L1D:50.1%
+[6/108] l1d16kB_l2128kB_l1a4_l2a16... ✓ 129.0B ticks, L1D:50.1%
+[7/108] l1d16kB_l2128kB_l1a8_l2a4... ✓ 129.0B ticks, L1D:50.1%
+[8/108] l1d16kB_l2128kB_l1a8_l2a8... ✓ 129.0B ticks, L1D:50.1%
+[9/108] l1d16kB_l2128kB_l1a8_l2a16... ✓ 129.0B ticks, L1D:50.1%
+[10/108] l1d16kB_l2256kB_l1a2_l2a4... ✓ 131.0B ticks, L1D:49.0%
+[11/108] l1d16kB_l2256kB_l1a2_l2a8... ✓ 131.0B ticks, L1D:49.0%
+[12/108] l1d16kB_l2256kB_l1a2_l2a16... ✓ 131.0B ticks, L1D:49.0%
+[13/108] l1d16kB_l2256kB_l1a4_l2a4... ✓ 128.8B ticks, L1D:50.1%
+[14/108] l1d16kB_l2256kB_l1a4_l2a8... ✓ 128.8B ticks, L1D:50.1%
+[15/108] l1d16kB_l2256kB_l1a4_l2a16... ✓ 128.8B ticks, L1D:50.1%
+[16/108] l1d16kB_l2256kB_l1a8_l2a4... ✓ 128.8B ticks, L1D:50.1%
+[17/108] l1d16kB_l2256kB_l1a8_l2a8... ✓ 128.8B ticks, L1D:50.1%
+[18/108] l1d16kB_l2256kB_l1a8_l2a16... ✓ 128.8B ticks, L1D:50.1%
+[19/108] l1d16kB_l2512kB_l1a2_l2a4... ✓ 131.0B ticks, L1D:49.0%
+[20/108] l1d16kB_l2512kB_l1a2_l2a8... ✓ 131.0B ticks, L1D:49.0%
+[21/108] l1d16kB_l2512kB_l1a2_l2a16... ✓ 131.0B ticks, L1D:49.0%
+[22/108] l1d16kB_l2512kB_l1a4_l2a4... ✓ 128.8B ticks, L1D:50.1%
+[23/108] l1d16kB_l2512kB_l1a4_l2a8... ✓ 128.8B ticks, L1D:50.1%
+[24/108] l1d16kB_l2512kB_l1a4_l2a16... ✓ 128.8B ticks, L1D:50.1%
+[25/108] l1d16kB_l2512kB_l1a8_l2a4... ✓ 128.8B ticks, L1D:50.1%
+[26/108] l1d16kB_l2512kB_l1a8_l2a8... ✓ 128.8B ticks, L1D:50.1%
+[27/108] l1d16kB_l2512kB_l1a8_l2a16... ✓ 128.8B ticks, L1D:50.1%
+[28/108] l1d16kB_l21MB_l1a2_l2a4... ✓ 131.0B ticks, L1D:49.0%
+[29/108] l1d16kB_l21MB_l1a2_l2a8... ✓ 131.0B ticks, L1D:49.0%
+[30/108] l1d16kB_l21MB_l1a2_l2a16... ✓ 131.0B ticks, L1D:49.0%
+[31/108] l1d16kB_l21MB_l1a4_l2a4... ✓ 128.8B ticks, L1D:50.1%
+[32/108] l1d16kB_l21MB_l1a4_l2a8... ✓ 128.8B ticks, L1D:50.1%
+[33/108] l1d16kB_l21MB_l1a4_l2a16... ✓ 128.8B ticks, L1D:50.1%
+[34/108] l1d16kB_l21MB_l1a8_l2a4... ✓ 128.8B ticks, L1D:50.1%
+[35/108] l1d16kB_l21MB_l1a8_l2a8... ✓ 128.8B ticks, L1D:50.1%
+[36/108] l1d16kB_l21MB_l1a8_l2a16... ✓ 128.8B ticks, L1D:50.1%
+[37/108] l1d32kB_l2128kB_l1a2_l2a4... ✓ 131.2B ticks, L1D:49.0%
+[38/108] l1d32kB_l2128kB_l1a2_l2a8... ✓ 131.2B ticks, L1D:49.0%
+[39/108] l1d32kB_l2128kB_l1a2_l2a16... ✓ 131.2B ticks, L1D:49.0%
+[40/108] l1d32kB_l2128kB_l1a4_l2a4... ✓ 129.0B ticks, L1D:50.1%
+[41/108] l1d32kB_l2128kB_l1a4_l2a8... ✓ 129.0B ticks, L1D:50.1%
+[42/108] l1d32kB_l2128kB_l1a4_l2a16... ✓ 129.0B ticks, L1D:50.1%
+[43/108] l1d32kB_l2128kB_l1a8_l2a4... ✓ 129.0B ticks, L1D:50.1%
+[44/108] l1d32kB_l2128kB_l1a8_l2a8... ✓ 129.0B ticks, L1D:50.1%
+[45/108] l1d32kB_l2128kB_l1a8_l2a16... ✓ 129.0B ticks, L1D:50.1%
+[46/108] l1d32kB_l2256kB_l1a2_l2a4... ✓ 131.0B ticks, L1D:49.0%
+[47/108] l1d32kB_l2256kB_l1a2_l2a8... ✓ 131.0B ticks, L1D:49.0%
+[48/108] l1d32kB_l2256kB_l1a2_l2a16... ✓ 131.0B ticks, L1D:49.0%
+[49/108] l1d32kB_l2256kB_l1a4_l2a4... ✓ 128.8B ticks, L1D:50.1%
+[50/108] l1d32kB_l2256kB_l1a4_l2a8... ✓ 128.8B ticks, L1D:50.1%
+[51/108] l1d32kB_l2256kB_l1a4_l2a16... ✓ 128.8B ticks, L1D:50.1%
+[52/108] l1d32kB_l2256kB_l1a8_l2a4... ✓ 128.8B ticks, L1D:50.1%
+[53/108] l1d32kB_l2256kB_l1a8_l2a8... ✓ 128.8B ticks, L1D:50.1%
+[54/108] l1d32kB_l2256kB_l1a8_l2a16... ✓ 128.8B ticks, L1D:50.1%
+[55/108] l1d32kB_l2512kB_l1a2_l2a4... ✓ 131.0B ticks, L1D:49.0%
+[56/108] l1d32kB_l2512kB_l1a2_l2a8... ✓ 131.0B ticks, L1D:49.0%
+[57/108] l1d32kB_l2512kB_l1a2_l2a16... ✓ 131.0B ticks, L1D:49.0%
+[58/108] l1d32kB_l2512kB_l1a4_l2a4... ✓ 128.8B ticks, L1D:50.1%
+[59/108] l1d32kB_l2512kB_l1a4_l2a8... ✓ 128.8B ticks, L1D:50.1%
+[60/108] l1d32kB_l2512kB_l1a4_l2a16... ✓ 128.8B ticks, L1D:50.1%
+[61/108] l1d32kB_l2512kB_l1a8_l2a4... ✓ 128.8B ticks, L1D:50.1%
+[62/108] l1d32kB_l2512kB_l1a8_l2a8... ✓ 128.8B ticks, L1D:50.1%
+[63/108] l1d32kB_l2512kB_l1a8_l2a16... ✓ 128.8B ticks, L1D:50.1%
+[64/108] l1d32kB_l21MB_l1a2_l2a4... ✓ 131.0B ticks, L1D:49.0%
+[65/108] l1d32kB_l21MB_l1a2_l2a8... ✓ 131.0B ticks, L1D:49.0%
+[66/108] l1d32kB_l21MB_l1a2_l2a16... ✓ 131.0B ticks, L1D:49.0%
+[67/108] l1d32kB_l21MB_l1a4_l2a4... ✓ 128.8B ticks, L1D:50.1%
+[68/108] l1d32kB_l21MB_l1a4_l2a8... ✓ 128.8B ticks, L1D:50.1%
+[69/108] l1d32kB_l21MB_l1a4_l2a16... ✓ 128.8B ticks, L1D:50.1%
+[70/108] l1d32kB_l21MB_l1a8_l2a4... ✓ 128.8B ticks, L1D:50.1%
+[71/108] l1d32kB_l21MB_l1a8_l2a8... ✓ 128.8B ticks, L1D:50.1%
+[72/108] l1d32kB_l21MB_l1a8_l2a16... ✓ 128.8B ticks, L1D:50.1%
+[73/108] l1d64kB_l2128kB_l1a2_l2a4... ✓ 81.9B ticks, L1D:97.1%
+[74/108] l1d64kB_l2128kB_l1a2_l2a8... ✓ 81.8B ticks, L1D:97.1%
+[75/108] l1d64kB_l2128kB_l1a2_l2a16... ✓ 81.8B ticks, L1D:97.1%
+[76/108] l1d64kB_l2128kB_l1a4_l2a4... ✓ 80.6B ticks, L1D:97.3%
+[77/108] l1d64kB_l2128kB_l1a4_l2a8... ✓ 80.5B ticks, L1D:97.3%
+[78/108] l1d64kB_l2128kB_l1a4_l2a16... ✓ 80.6B ticks, L1D:97.3%
+[79/108] l1d64kB_l2128kB_l1a8_l2a4... ✓ 82.4B ticks, L1D:95.5%
+[80/108] l1d64kB_l2128kB_l1a8_l2a8... ✓ 82.4B ticks, L1D:95.5%
+[81/108] l1d64kB_l2128kB_l1a8_l2a16... ✓ 82.4B ticks, L1D:95.5%
+[82/108] l1d64kB_l2256kB_l1a2_l2a4... ✓ 81.6B ticks, L1D:97.1%
+[83/108] l1d64kB_l2256kB_l1a2_l2a8... ✓ 81.6B ticks, L1D:97.1%
+[84/108] l1d64kB_l2256kB_l1a2_l2a16... ✓ 81.6B ticks, L1D:97.1%
+[85/108] l1d64kB_l2256kB_l1a4_l2a4... ✓ 80.3B ticks, L1D:97.3%
+[86/108] l1d64kB_l2256kB_l1a4_l2a8... ✓ 80.3B ticks, L1D:97.3%
+[87/108] l1d64kB_l2256kB_l1a4_l2a16... ✓ 80.3B ticks, L1D:97.3%
+[88/108] l1d64kB_l2256kB_l1a8_l2a4... ✓ 82.2B ticks, L1D:95.5%
+[89/108] l1d64kB_l2256kB_l1a8_l2a8... ✓ 82.2B ticks, L1D:95.5%
+[90/108] l1d64kB_l2256kB_l1a8_l2a16... ✓ 82.2B ticks, L1D:95.5%
+[91/108] l1d64kB_l2512kB_l1a2_l2a4... ✓ 81.6B ticks, L1D:97.1%
+[92/108] l1d64kB_l2512kB_l1a2_l2a8... ✓ 81.6B ticks, L1D:97.1%
+[93/108] l1d64kB_l2512kB_l1a2_l2a16... ✓ 81.6B ticks, L1D:97.1%
+[94/108] l1d64kB_l2512kB_l1a4_l2a4... ✓ 80.3B ticks, L1D:97.3%
+[95/108] l1d64kB_l2512kB_l1a4_l2a8... ✓ 80.3B ticks, L1D:97.3%
+[96/108] l1d64kB_l2512kB_l1a4_l2a16... ✓ 80.3B ticks, L1D:97.3%
+[97/108] l1d64kB_l2512kB_l1a8_l2a4... ✓ 82.2B ticks, L1D:95.5%
+[98/108] l1d64kB_l2512kB_l1a8_l2a8... ✓ 82.2B ticks, L1D:95.5%
+[99/108] l1d64kB_l2512kB_l1a8_l2a16... ✓ 82.2B ticks, L1D:95.5%
+[100/108] l1d64kB_l21MB_l1a2_l2a4... ✓ 81.6B ticks, L1D:97.1%
+[101/108] l1d64kB_l21MB_l1a2_l2a8... ✓ 81.6B ticks, L1D:97.1%
+[102/108] l1d64kB_l21MB_l1a2_l2a16... ✓ 81.6B ticks, L1D:97.1%
+[103/108] l1d64kB_l21MB_l1a4_l2a4... ✓ 80.3B ticks, L1D:97.3%
+[104/108] l1d64kB_l21MB_l1a4_l2a8... ✓ 80.3B ticks, L1D:97.3%
+[105/108] l1d64kB_l21MB_l1a4_l2a16... ✓ 80.3B ticks, L1D:97.3%
+[106/108] l1d64kB_l21MB_l1a8_l2a4... ✓ 82.2B ticks, L1D:95.5%
+[107/108] l1d64kB_l21MB_l1a8_l2a8... ✓ 82.2B ticks, L1D:95.5%
+[108/108] l1d64kB_l21MB_l1a8_l2a16... ✓ 82.2B ticks, L1D:95.5%
+
+✓ Results saved to: assignment_cache_optimization/results/full_sweep_results/results.json
+✓ Results saved to: assignment_cache_optimization/results/full_sweep_results/results.csv
+
+======================================================================
+SWEEP SUMMARY
+======================================================================
+Total Configurations: 108
+Successful: 108
+Failed: 0
+Total Time: 73.9 minutes (4437 seconds)
+Avg Time per Sim: 41.1 seconds
+======================================================================
+
+Next steps:
+  python scripts/analyze_sweep.py assignment_cache_optimization/results/full_sweep_results/results.json --output=assignment_cache_optimization/results/full_sweep_results
+

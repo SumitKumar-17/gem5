@@ -1,0 +1,105 @@
+
+======================================================================
+Custom Parameter Sweep Script
+======================================================================
+
+Parameter: l1d_size
+Values: 16kB, 32kB, 64kB, 128kB
+
+Fixed Parameters:
+  l1i_size: 16kB
+  l2_size: 256kB
+  l1_assoc: 4
+  l2_assoc: 8
+  cpu_type: timing
+======================================================================
+
+
+======================================================================
+Running simulation: l1d_size=16kB
+Output directory: assignment_cache_optimization/results/single_param_sweep/l1d_size_16kB
+Command: ./build/RISCV/gem5.opt --outdir=assignment_cache_optimization/results/single_param_sweep/l1d_size_16kB assignment_cache_optimization/configs/cache_config.py --l1d_size=16kB --binary=assignment_cache_optimization/benchmarks/matrix_multiply --l1i_size=16kB --l2_size=256kB --l1_assoc=4 --l2_assoc=8 --cpu_type=timing
+======================================================================
+
+✓ Simulation completed successfully in 56.3 seconds
+
+----------------------------------------------------------------------
+Results for l1d_size=16kB:
+  Execution Time: 128,830,948,000 ticks (0.128831 seconds)
+  L1D Hit Rate: 50.10%
+  L1D Misses: 2,137,287
+  L2 Hit Rate: 99.80%
+----------------------------------------------------------------------
+
+
+======================================================================
+Running simulation: l1d_size=32kB
+Output directory: assignment_cache_optimization/results/single_param_sweep/l1d_size_32kB
+Command: ./build/RISCV/gem5.opt --outdir=assignment_cache_optimization/results/single_param_sweep/l1d_size_32kB assignment_cache_optimization/configs/cache_config.py --l1d_size=32kB --binary=assignment_cache_optimization/benchmarks/matrix_multiply --l1i_size=16kB --l2_size=256kB --l1_assoc=4 --l2_assoc=8 --cpu_type=timing
+======================================================================
+
+✓ Simulation completed successfully in 57.1 seconds
+
+----------------------------------------------------------------------
+Results for l1d_size=32kB:
+  Execution Time: 128,821,690,000 ticks (0.128822 seconds)
+  L1D Hit Rate: 50.11%
+  L1D Misses: 2,136,901
+  L2 Hit Rate: 99.80%
+----------------------------------------------------------------------
+
+
+======================================================================
+Running simulation: l1d_size=64kB
+Output directory: assignment_cache_optimization/results/single_param_sweep/l1d_size_64kB
+Command: ./build/RISCV/gem5.opt --outdir=assignment_cache_optimization/results/single_param_sweep/l1d_size_64kB assignment_cache_optimization/configs/cache_config.py --l1d_size=64kB --binary=assignment_cache_optimization/benchmarks/matrix_multiply --l1i_size=16kB --l2_size=256kB --l1_assoc=4 --l2_assoc=8 --cpu_type=timing
+======================================================================
+
+✓ Simulation completed successfully in 41.9 seconds
+
+----------------------------------------------------------------------
+Results for l1d_size=64kB:
+  Execution Time: 80,343,964,000 ticks (0.080344 seconds)
+  L1D Hit Rate: 97.27%
+  L1D Misses: 116,958
+  L2 Hit Rate: 96.31%
+----------------------------------------------------------------------
+
+
+======================================================================
+Running simulation: l1d_size=128kB
+Output directory: assignment_cache_optimization/results/single_param_sweep/l1d_size_128kB
+Command: ./build/RISCV/gem5.opt --outdir=assignment_cache_optimization/results/single_param_sweep/l1d_size_128kB assignment_cache_optimization/configs/cache_config.py --l1d_size=128kB --binary=assignment_cache_optimization/benchmarks/matrix_multiply --l1i_size=16kB --l2_size=256kB --l1_assoc=4 --l2_assoc=8 --cpu_type=timing
+======================================================================
+
+✓ Simulation completed successfully in 42.0 seconds
+
+----------------------------------------------------------------------
+Results for l1d_size=128kB:
+  Execution Time: 77,694,131,000 ticks (0.077694 seconds)
+  L1D Hit Rate: 99.85%
+  L1D Misses: 6,569
+  L2 Hit Rate: 38.01%
+----------------------------------------------------------------------
+
+✓ Results saved to: assignment_cache_optimization/results/single_param_sweep/results.json
+✓ Results saved to: assignment_cache_optimization/results/single_param_sweep/results.csv
+
+======================================================================
+SUMMARY TABLE
+======================================================================
+L1D Size     Exec Time (ticks)    L1D Hit Rate    L2 Hit Rate    
+----------------------------------------------------------------------
+16kB         128,830,948,000      50.10         % 99.80         %
+32kB         128,821,690,000      50.11         % 99.80         %
+64kB         80,343,964,000       97.27         % 96.31         %
+128kB        77,694,131,000       99.85         % 38.01         %
+======================================================================
+
+✓ Custom parameter sweep complete!
+
+Next steps:
+  1. Review results in: assignment_cache_optimization/results/single_param_sweep/
+  2. Generate plots using the results
+  3. Analyze trends and write summary
+
